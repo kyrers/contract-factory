@@ -1,12 +1,14 @@
+//BASED ON: https://hackernoon.com/using-ethereums-create2-nw2137q7
+
 const eth = require('ethereumjs-util')
 
-// 0xff ++ deployingAddress is fixed:
+// 0xff ++ deployingAddress
 var deployerAddress = "0xffDEPLOYERADDRESS";
 
-// Hash of the bytecode is fixed. Calculated with eth.keccak256():
+// Hash of the bytecode - calculated with eth.keccak256():
 var bytecode = eth.keccakFromHexString("BYTECODE_OF_THE_CONTRACT_TO_DEPLOY".toString('hex'), 256).toString('hex');
 
-// In each loop, i is the value of the salt we are checking
+//i is the value of the salt we are checking
 for (var i = 0; i < 72057594037927936; i++) {
    // 1. Convert i to hex, and it pad to 32 bytes:
    var saltToBytes = i.toString(16).padStart(64, '0');
