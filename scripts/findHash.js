@@ -3,7 +3,7 @@
 const eth = require('ethereumjs-util')
 
 // 0xff ++ deployingAddress
-var deployerAddress = "0xffDEPLOYERADDRESS";
+var deployerAddress = "0xfDEPLOYER_ADDRESS";
 
 // Hash of the bytecode - calculated with eth.keccak256():
 var bytecode = eth.keccakFromHexString("BYTECODE_OF_THE_CONTRACT_TO_DEPLOY".toString('hex'), 256).toString('hex');
@@ -19,8 +19,8 @@ for (var i = 0; i < 72057594037927936; i++) {
    // 3. Hash the resulting string
    var address = eth.keccakFromHexString(concatString.toString('hex'), 256).toString('hex');
 
-   // 4. Remove 12 bytes and check if the result startswith/endswith/contains whatever you want
-   if (address.substr(24).startsWith('whatever')) {
+   // 4. Remove 12 bytes and check if the result startswith/endswith/includes whatever you want
+   if (address.substr(24).includes('123456')) {
       console.log(address.substring(24));
       console.log(i);
       break
