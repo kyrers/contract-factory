@@ -1,15 +1,15 @@
 require("@nomiclabs/hardhat-waffle");
 
-//Template for goerli deployment
+//Template for ropsten deployment
 
-//const ACCOUNT_PK = "GOERLI_ACCOUNT_PK";
+const ACCOUNT_PK = "YOUR_ROPSTEN_ACCOUNT_PK";
 
 module.exports = {
   solidity: "0.8.7",
-  /*networks: {
-    goerli: {
-      url: "GOERLI RPC",
+  networks: {
+    ropsten: {
+      url: "ROPSTEN_RPC",
       accounts: [`${ACCOUNT_PK}`]
     }
-  }*/
+  }
 };
